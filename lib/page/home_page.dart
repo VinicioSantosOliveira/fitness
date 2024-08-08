@@ -8,8 +8,49 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
-      body: const Column(
-        children: [],
+      body: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(top: 40, left: 20, right: 20),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xff1D1617).withOpacity(0.07),
+                  blurRadius: 40,
+                  spreadRadius: 0.0,
+                ),
+              ],
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Colors.white,
+                contentPadding: const EdgeInsets.all(15),
+                prefixIcon: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: SvgPicture.asset('assets/icons/Search.svg'),
+                ),
+                suffixIcon: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const VerticalDivider(
+                      color: Colors.black,
+                      thickness: 0.1,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SvgPicture.asset('assets/icons/Filter.svg'),
+                    ),
+                  ],
+                ),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  borderSide: BorderSide.none,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
